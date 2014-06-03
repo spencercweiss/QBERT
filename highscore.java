@@ -49,14 +49,18 @@ public class highscore {
     */
     
     public void modifyHighScores(int newScore, String newName){
-	int x = highscores.length()-1;
+	//int x = highscores.length()-1;
 	if (highscores.length() <5){
-	    highscores.add(newScore);
 	    // quickSelect(highscores, highScores[0], highScores[x]);
-	    for (i = 0; i < 4; i++){
-		int n = highscores[0];
+	    for (i = 0; i < highscores.length(); i++){
+		int n = highscores[i];
 		if (newScore > n)
 		    highscores.insert(i, newScore);
+		    i++;
+		    i++;
+		    i++;
+		    i++; // to avoid adding the score in twice
+	    }
 	    int t = highscores.get(newScore); // retrieves index
 	    topPlayers.insert(t, newName);
 	}
@@ -70,6 +74,5 @@ public class highscore {
 	    topPlayers.delete(4);
 	    topPlayers.insert(t, newName);
 	}
-    }
     }
 }
