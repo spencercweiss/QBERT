@@ -174,7 +174,8 @@ body{
   transform: rotate(-30deg);
 }
 #qbert:after{
-  content: 'S@#%$!';
+//  content: 'S@#%$!';
+  content: '';
   background: @bodlt;
   font-size: 20px;
   font-weight: bold;
@@ -241,7 +242,7 @@ body{
     -50px 190px 0 @left,
     -150px 240px 0 @left;
 }
-@keyframes hop{
-  from {top:36px;}
+/* @keyframes hop{
+ from {top:36px;}
   to {top:20px;}
-}
+} /*
