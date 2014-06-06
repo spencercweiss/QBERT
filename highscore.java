@@ -50,8 +50,7 @@ public class highscore {
     
     public void modifyHighScores(int newScore, String newName){
 	//int x = highscores.length()-1;
-	if (highscores.length() <5){
-	    // quickSelect(highscores, highScores[0], highScores[x]);
+	if (highscores.length() <5){ // skip the process of checking values, add score
 	    for (i = 0; i < highscores.length(); i++){
 		int n = highscores[i];
 		if (newScore > n)
@@ -59,20 +58,24 @@ public class highscore {
 		    i++;
 		    i++;
 		    i++;
-		    i++; // to avoid adding the score in twice
+		    i++; // to avoid adding the score in more than once if it's the maximum value in the list
+                else {
+                    highscores.insert((highscores.length()-1), newScore);
 	    }
 	    int t = highscores.get(newScore); // retrieves index
-	    topPlayers.insert(t, newName);
+	    topPlayers.insert(t, newName); // adds name to same index of name list
 	}
-	if (newScore > highscores[4]){
-	    for (i = 0; i < 4; i++){
-		int n = highScores[0];
-		if (newScore > n)
-		    topScores.insert(i, newScore);
-	    }
-	    int t = highscores.get(newScore);
-	    topPlayers.delete(4);
-	    topPlayers.insert(t, newName);
+        else {
+        	if (newScore > highscores[4]){ // list 
+	            for (i = 0; i < 4; i++){
+        		int n = highScores[0];
+         		if (newScore > n)
+	        	    topScores.insert(i, newScore);
+	            }
+	            int t = highscores.get(newScore);
+	            topPlayers.delete(4);
+	            topPlayers.insert(t, newName);
+               }
 	}
     }
 }
