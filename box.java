@@ -3,7 +3,7 @@ import java.io.*;
 
 public class box {
 
-	private box parentL, parentR; left, right;
+	private box parentL, parentR, left, right;
 
 	public int color;
 
@@ -23,11 +23,11 @@ public class box {
 	}
 
 	public void setParentL(box b) {
-		ParentL = b;
+		parentL = b;
 	}
 
 	public void setParentR(box b) {
-		ParentR = b;
+		parentR = b;
 	}
 
 	public box getRight() {
