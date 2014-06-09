@@ -11,6 +11,7 @@ public class box {
 
 
 
+
 		
 	public void setRight(box b) {
 		right = b;
@@ -42,7 +43,7 @@ public class box {
 		return parentL;
 	}
 
-	public box getParentR(box b) {
+	public box getParentR() {
 		return parentR;
 	}
 
