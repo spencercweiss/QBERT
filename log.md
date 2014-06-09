@@ -31,3 +31,8 @@ Spencer:
 Kyler:
 
 Reda:
+
+June 9, 2014
+
+Kyler: Created enemies and character superclass. Planned out the interaction between the two and made many decisions about the overall plan of how the game will work and what we will sacrafice and change from the original game.
+Reda: Planned game out with Kyler. Learned a lot of GUI but I seriously debating maybe using processing since this requires cubes. Will make the decision tonight and begin work on that.
