@@ -7,6 +7,8 @@ public class Enemy extends character {
 		super(b);
 	}
 
+	public Enemy() {}
+
 	public void move() {
 		Random r = new Random();
 		box temp = current;
@@ -26,7 +28,8 @@ public class Enemy extends character {
 	public boolean check(QBERT q) {
 		return q.getCurrent() == current;
 	}
-		
+
+}
 
 
 
