@@ -7,10 +7,13 @@ public class box {
 
 	public int color;
 
+	public int xLoc, yLoc;
 
 
-
-
+	public box(int x, int y) {
+		xLoc = x;
+		yLoc = y;
+	}
 
 		
 	public void setRight(box b) {

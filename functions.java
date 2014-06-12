@@ -4,7 +4,7 @@ import java.io.*;
 public class functions {
 
 
-	public static void createPyramid(box b) {
+	public static ArrayList<box> createPyramid(box b) {
 	/*	if (n >= 7)
 			return;
 		else if (b.getParentL() = null && b.getParentR == null) {
@@ -23,16 +23,17 @@ public class functions {
 
 
 	*/
-
+	ArrayList<box> a = new ArrayList();
 	box c = b;
 	box h = b;
 	int n = 6;
 	int i;
-	while (n > 0);
+	a.add(c);
+	while (n > 0) {
 		c = h;
 		i = 0;
 		while (i < n) {
-			c.setLeft(new box());
+			c.setLeft(new box(c.xLoc - 50, c.yLoc + 50));
 			c.getLeft().setParentR(c);
 			if (c.getParentL() != null) {
 				c.getParentL().getLeft().setRight(c.getLeft());
@@ -40,14 +41,23 @@ public class functions {
 			}
 			c = c.getLeft();
 			i++;
+			a.add(c);
 		}
-		h.setRight(new box());
+		h.setRight(new box(h.xLoc + 50, h.yLoc + 50));
 		h.getRight().setParentR(h);
 		h = h.getRight();
 		n--;
+		a.add(h);
+	}
+	return a;
 	}
 			
-
+	public static box placeEnemy(ArrayList<box> a) {
+		Random r = new Random();
+		int temp = r.nextInt(27);
+		return a.get(temp);
+	}
+		
 
 
 
