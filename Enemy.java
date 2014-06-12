@@ -26,7 +26,8 @@ public class Enemy extends character {
 	public boolean check(QBERT q) {
 		return q.getCurrent() == current;
 	}
-		
+
+}
 
 
 
