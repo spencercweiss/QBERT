@@ -7,7 +7,7 @@ public class Enemy extends character {
 		super(b);
 	}
 
-	public Enemy() {}
+//	public Enemy() {}
 
 	public void move() {
 		Random r = new Random();
@@ -64,4 +64,4 @@ public class Enemy extends character {
 
 
 
-}
+

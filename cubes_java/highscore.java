@@ -1,4 +1,4 @@
-import java.io.*;
+/*import java.io.*;
 import java.util.*;
 
 // Will keep track of top 5 high scores. Top score is shown on game screen.
@@ -45,4 +45,4 @@ public class highscore {
                }
 	}
     }
-}
+}*/

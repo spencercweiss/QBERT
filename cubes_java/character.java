@@ -34,7 +34,7 @@ public class character {
 		if (current.getParentR() != null) {
 			current = current.getParentR();
 			xLoc = xLoc + 50;
-			yLox = yLoc - 50;
+			yLoc = yLoc - 50;
 		}
 		faceRight = true;
 	}

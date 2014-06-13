@@ -1,6 +1,6 @@
 import java.util.*;
 import java.io.*;
-
+/*
 public class platform extends box {
 
 	private box connected;
@@ -18,10 +18,10 @@ public class platform extends box {
 
 	
 
-
-
-
-
-
-
 }
+*/
+
+
+
+
+

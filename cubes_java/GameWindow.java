@@ -1,9 +1,9 @@
-import javax.swing.*;
+/*import javax.swing.*;
 import java.awt.*;
 import java.util.*;
 import java.io.*;
 //import javax.media.j3d.*;
-
+/*
 
     
     public GameWindow() {
@@ -29,4 +29,4 @@ import java.io.*;
     
 
 
-}
+}*/

@@ -2,6 +2,11 @@ PImage img;
 int x = 335;
 int y = 80;
 boolean pressed = false;
+
+box top = new box(325,100);
+ArrayList<box> a = functions.createPyramid(top);
+QBERT q = new QBERT(top);
+
 void setup(){
 size(700, 700);
 background(0);
@@ -44,31 +49,27 @@ rect(525,400,50,20);
 rect(625,400,50,20);
 //QBERT
 img = loadImage("bert.png");
-image(img,x,y);
+image(img,q.xLoc,q.yLoc);
 }
 void draw() {
   if (keyPressed){
     if (key == 'a' && pressed == true){
-      x -= 50;
-      y += 50;
+      q.dLeft();
       pressed = false;
       setup();
     }
     if (key == 's' && pressed == true){
-      x += 50;
-      y += 50;
+      q.dRight();
       pressed = false;
       setup();
     }
     if (key == 'q' && pressed == true){
-      x -= 50;
-      y -= 50;
+      q.uLeft();
       pressed = false;
       setup();
     }
     if (key == 'w' && pressed == true){
-      x += 50;
-      y -= 50;
+      q.uRight();
       pressed = false;
       setup();
     }
