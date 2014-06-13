@@ -1,4 +1,5 @@
-PImage img;
+PImage imgl;
+PImage imgr;
 int x = 335;
 int y = 80;
 boolean pressed = false;
@@ -50,9 +51,14 @@ rect(25,400,50,20);
 rect(425,400,50,20);
 rect(525,400,50,20);
 rect(625,400,50,20);
-//QBERT
-img = loadImage("bert.png");
-image(img,q.xLoc,q.yLoc);
+//QBERT facing directions based on where he's headed
+imgl = loadImage("bertleft.png");
+imgr = loadImage("bertright.png");
+if(q.xLoc < 325){
+image(imgl,q.xLoc,q.yLoc);
+}else{
+image(imgr,q.xLoc,q.yLoc);
+}
 }
 void draw() {
   if (keyPressed){
