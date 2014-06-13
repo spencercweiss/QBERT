@@ -5,6 +5,8 @@ public class Enemy extends character {
 
 	public Enemy(box b) {
 		super(b);
+                xLoc = b.xLoc+10;
+                yLoc = b.yLoc-20;
 	}
 
 //	public Enemy() {}

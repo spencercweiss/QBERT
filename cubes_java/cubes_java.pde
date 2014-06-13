@@ -3,12 +3,14 @@ PImage imgr;
 int x = 335;
 int y = 80;
 boolean pressed = false;
+int t = 20;
 
 box top = new box(325,100);
 box c = top;
 //ArrayList<box> a = functions.createPyramid(top);
 QBERT q = new QBERT(top);
-int n = functions.newPyramid(top);
+box n = functions.newPyramid(top);
+Enemy e = new Enemy(n);
 
 void setup(){
 size(700, 700);
@@ -59,30 +61,39 @@ image(imgr,q.xLoc,q.yLoc);
 }else{
 image(imgl,q.xLoc,q.yLoc);
 }
+image(imgl,e.xLoc,e.yLoc);
 }
 void draw() {
+  if (t == 20) {
+    t = 0;
+    e.move();
+  }
+  else {
+    t++;
+  }
   if (keyPressed){
     if (key == 'a' && pressed == true){
       q.dLeft();
       pressed = false;
-      setup();
+      //setup();
     }
     if (key == 's' && pressed == true){
       q.dRight();
       pressed = false;
-      setup();
+    //  setup();
     }
     if (key == 'q' && pressed == true){
       q.uLeft();
       pressed = false;
-      setup();
+     // setup();
     }
     if (key == 'w' && pressed == true){
       q.uRight();
       pressed = false;
-      setup();
+     // setup();
     }
   }
+  setup();
 }
 void keyReleased() {
   pressed = true;

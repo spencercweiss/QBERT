@@ -58,7 +58,8 @@ public class functions {
 		return a.get(temp);
 	}
 
-    public static int newPyramid(box top) {
+    public static box newPyramid(box top) {
+      box result;
       box b = top;
       top.setLeft(new box(275,150));
       top.getLeft().setParentR(top);
@@ -93,6 +94,7 @@ public class functions {
       c.right.parentL = c;
       a = a.left;
       b = b.left;
+      result = b;
       box d = c.right;
       c = c.left;
       
@@ -171,7 +173,7 @@ public class functions {
       f.right.parentL = f;
       
       //arbitrary int
-      return 4;
+      return b;
     }
 		
 
