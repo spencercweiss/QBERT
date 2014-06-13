@@ -54,10 +54,10 @@ rect(625,400,50,20);
 //QBERT facing directions based on where he's headed
 imgl = loadImage("bertleft.png");
 imgr = loadImage("bertright.png");
-if(q.xLoc < 325){
-image(imgl,q.xLoc,q.yLoc);
-}else{
+if(q.faceRight){
 image(imgr,q.xLoc,q.yLoc);
+}else{
+image(imgl,q.xLoc,q.yLoc);
 }
 }
 void draw() {
