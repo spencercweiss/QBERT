@@ -3,7 +3,7 @@ import java.io.*;
 
 public class box {
 
-	private box parentL, parentR, left, right;
+	public box parentL, parentR, left, right;
 
 	public int color;
 

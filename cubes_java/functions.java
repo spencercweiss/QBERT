@@ -57,6 +57,122 @@ public class functions {
 		int temp = r.nextInt(27);
 		return a.get(temp);
 	}
+
+    public static int newPyramid(box top) {
+      box b = top;
+      top.setLeft(new box(275,150));
+      top.getLeft().setParentR(top);
+      top.setRight(new box(375,150));
+      top.getRight().setParentL(top);
+      b = b.getLeft();
+      
+      b.setLeft(new box(225,200));
+      b.getLeft().setParentR(b);
+      b.setRight(new box(325,200));
+      b.getRight().setParentL(b);
+      b.getRight().setParentR(top.getRight());
+      box a = top.getRight();
+      a.setLeft(b.getRight());
+      a.setRight(new box(425,200));
+      a.getRight().setParentL(a);
+      box c = a.getRight();
+      a = b.getLeft();
+      b = b.getRight();
+      
+      a.setLeft(new box(175, 250));
+      a.left.parentR = a;
+      a.right = new box(275, 250);
+      a.right.parentL = a;
+      a.right.parentR = b;
+      b.left = a.right;
+      b.right = new box(375,250);
+      b.right.parentL = b;
+      b.right.parentR = c;
+      c.left = b.right;
+      c.right = new box(475,250);
+      c.right.parentL = c;
+      a = a.left;
+      b = b.left;
+      box d = c.right;
+      c = c.left;
+      
+      a.left = new box(125,300);
+      a.left.parentR = a;
+      a.right = new box(225,300);
+      a.right.parentL = a;
+      a.right.parentR = b;
+      b.left = a.right;
+      b.right = new box(325,300);
+      b.right.parentL = b;
+      b.right.parentR = c;
+      c.left = b.right;
+      c.right = new box(425,300);
+      c.right.parentL = c;
+      c.right.parentR = d;
+      d.left = c.right;
+      d.right = new box(525,300);
+      d.right.parentL = d;
+      a = a.left;
+      b = b.left;
+      c = c.left;
+      box e = d.right;
+      d = d.left;
+      
+      a.left = new box(75,350);
+      a.left.parentR = a;
+      a.right = new box(175,350);
+      a.right.parentL = a;
+      a.right.parentR = b;
+      b.left = a.right;
+      b.right = new box(275,350);
+      b.right.parentL = b;
+      b.right.parentR = c;
+      c.left = b.right;
+      c.right = new box(375,350);
+      c.right.parentL = c;
+      c.right.parentR = d;
+      d.left = c.right;
+      d.right = new box(475,350);
+      d.right.parentL = d;
+      d.right.parentR = e;
+      e.left = d.right;
+      e.right = new box(575,350);
+      e.right.parentL = e;
+      a = a.left;
+      b = b.left;
+      c = c.left;
+      d = d.left;
+      box f = e.right;
+      e = e.left;
+      
+      a.left = new box(25,400);
+      a.left.parentR = a;
+      a.right = new box(125,400);
+      a.right.parentL = a;
+      a.right.parentR = b;
+      b.left = a.right;
+      b.right = new box(225,400);
+      b.right.parentL = b;
+      b.right.parentR = c;
+      c.left = b.right;
+      c.right = new box(325,400);
+      c.right.parentL = c;
+      c.right.parentR = d;
+      d.left = c.right;
+      d.right = new box(425,400);
+      d.right.parentL = d;
+      d.right.parentR = e;
+      e.left = d.right;
+      e.right = new box(525,400);
+      e.right.parentR = f;
+      e.right.parentL = e;
+      f.left = e.right;
+      f.right = new box(625,400);
+      f.right.parentL = f;
+      
+      //arbitrary int
+      return 4;
+    }
 		
 
 

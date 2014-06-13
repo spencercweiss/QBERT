@@ -4,8 +4,10 @@ int y = 80;
 boolean pressed = false;
 
 box top = new box(325,100);
-ArrayList<box> a = functions.createPyramid(top);
+box c = top;
+//ArrayList<box> a = functions.createPyramid(top);
 QBERT q = new QBERT(top);
+int n = functions.newPyramid(top);
 
 void setup(){
 size(700, 700);
@@ -19,6 +21,7 @@ rect(275,150,50,20);
 rect(375,150,50,20);
 //r3
 rect(325,200,50,20);
+
 rect(225,200,50,20);
 rect(425,200,50,20);
 //r4
