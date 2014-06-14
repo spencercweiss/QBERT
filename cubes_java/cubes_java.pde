@@ -1,6 +1,7 @@
 PImage imgl;
 PImage imgr;
 PImage coily;
+PImage ball;
 int x = 335;
 int y = 80;
 boolean pressed = false;
@@ -76,6 +77,8 @@ for (box z : q.a) {
 imgl = loadImage("bertleft.png");
 imgr = loadImage("bertright.png");
 coily = loadImage("coily.png");
+//ball
+ball = loadImage("ball.png");
 //changer
 //changer = loadImage("changer.png")
 if(q.faceRight){
@@ -84,7 +87,9 @@ image(imgr,q.xLoc,q.yLoc);
 image(imgl,q.xLoc,q.yLoc);
 }
 
-image(coily,e.xLoc,e.yLoc);
+//image(coily,e.xLoc,e.yLoc);
+image(ball,e.xLoc,e.yLoc);
+
 
 if (b1 != null)
   image(imgr,b1.xLoc,b1.yLoc);
