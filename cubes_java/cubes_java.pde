@@ -4,6 +4,7 @@ int x = 335;
 int y = 80;
 boolean pressed = false;
 int t = 20;
+int level = 1;
 
 box top = new box(325,100);
 box c = top;
@@ -11,10 +12,12 @@ box c = top;
 QBERT q = new QBERT(top);
 box n = functions.newPyramid(top);
 Enemy e = new Enemy(n);
+Ball b1;
+Changer ch;
 ArrayList<Enemy> enemies = new ArrayList();
-//enemies.add(e);
 
 void setup(){
+ enemies.add(e);
  makeStuff();
 }
 
@@ -76,17 +79,19 @@ image(imgr,q.xLoc,q.yLoc);
 }else{
 image(imgl,q.xLoc,q.yLoc);
 }
+
 image(imgl,e.xLoc,e.yLoc);
 }
 
 void draw() {
-  if (e.check(q) || q.a.size() >= 28`)
+  if (functions.checkEnemies(q,enemies) || q.a.size() >= 28)
     endGame();
    else {
 
   if (t == 20) {
     t = 0;
-    e.move();
+    for (Enemy enemy : enemies)
+      enemy.move();
   }
   else {
     t++;
@@ -124,8 +129,20 @@ void keyReleased() {
 
 void endGame() {
   //needs to be implemented, random rectangle as placeholder
+  if (q.a.size() >= 28) {
+    e = new Enemy(n);
+    b1 = new Ball(top.left.right, top);
+    enemies.add(b1);
+    q = new QBERT(top);
+    if (level >= 2) {
+      ch = new Changer(top.right.right.left, q);
+      enemies.add(ch);
+    }
+    level++;
+  }
+  else {
   rect(86,99,400,97);
 }
 
-
+}
 

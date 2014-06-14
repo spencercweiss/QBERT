@@ -79,6 +79,7 @@ public class functions {
       box c = a.getRight();
       a = b.getLeft();
       b = b.getRight();
+      result = b;
       
       a.setLeft(new box(175, 250));
       a.left.parentR = a;
@@ -94,7 +95,6 @@ public class functions {
       c.right.parentL = c;
       a = a.left;
       b = b.left;
-      result = b;
       box d = c.right;
       c = c.left;
       
@@ -175,6 +175,13 @@ public class functions {
       return b;
     }
     
+    public static boolean checkEnemies(QBERT q, ArrayList<Enemy> enemies) {
+      for (Enemy e : enemies) {
+        if (e.check(q))
+          return true;
+      }
+      return false;
+    }
 		
 
 
