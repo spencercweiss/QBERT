@@ -13,7 +13,7 @@ box c = top;
 QBERT q = new QBERT(top);
 box n = functions.newPyramid(top);
 Enemy e = new Enemy(n);
-Coily b1;
+Ball b1;
 Changer ch;
 ArrayList<Enemy> enemies = new ArrayList();
 
@@ -85,7 +85,15 @@ image(imgl,q.xLoc,q.yLoc);
 }
 
 image(coily,e.xLoc,e.yLoc);
+
+if (b1 != null)
+  image(imgr,b1.xLoc,b1.yLoc);
+  
+if (ch != null)
+  image(imgr,ch.xLoc,ch.yLoc);
 }
+
+
 
 void draw() {
   if (functions.checkEnemies(q,enemies) || q.a.size() >= 28)
@@ -134,7 +142,9 @@ void keyReleased() {
 void endGame() {
   //needs to be implemented, random rectangle as placeholder
   if (q.a.size() >= 28) {
+    enemies.remove(0);
     e = new Enemy(n);
+    enemies.add(e);
     b1 = new Ball(top.left.right, top);
     enemies.add(b1);
     q = new QBERT(top);
@@ -145,7 +155,7 @@ void endGame() {
     level++;
   }
   else {
-  rect(86,99,400,97);
+  rect(10,10,400,97);
 }
 
 }

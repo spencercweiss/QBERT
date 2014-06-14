@@ -1,11 +1,11 @@
 import java.util.*;
 import java.io.*;
 
-public class Coily extends Enemy {
+public class Ball extends Enemy {
   
   public box top;
   
-  public Coily(box b, box t) {
+  public Ball(box b, box t) {
     super(b);
     top = t;
   }
@@ -15,6 +15,8 @@ public class Coily extends Enemy {
     int n = r.nextInt(2);
     if (current.right == null || current.left == null) {
       current = top;
+      xLoc = 335;
+      yLoc = 80;
     }
     else if (n == 0) {
       dRight();
