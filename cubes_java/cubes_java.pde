@@ -11,8 +11,15 @@ box c = top;
 QBERT q = new QBERT(top);
 box n = functions.newPyramid(top);
 Enemy e = new Enemy(n);
+ArrayList<Enemy> enemies = new ArrayList();
+//enemies.add(e);
 
 void setup(){
+ makeStuff();
+}
+
+void makeStuff() {
+   //enemies.add(e);
 size(700, 700);
 background(0);
 
@@ -54,6 +61,14 @@ rect(425,400,50,20);
 rect(525,400,50,20);
 rect(625,400,50,20);
 //QBERT facing directions based on where he's headed
+
+for (box z : q.a) {
+//  fill(101);
+  rect(z.xLoc,z.yLoc,50,20,22);
+}
+
+
+
 imgl = loadImage("bertleft.png");
 imgr = loadImage("bertright.png");
 if(q.faceRight){
@@ -63,7 +78,12 @@ image(imgl,q.xLoc,q.yLoc);
 }
 image(imgl,e.xLoc,e.yLoc);
 }
+
 void draw() {
+  if (e.check(q) || q.a.size() >= 28`)
+    endGame();
+   else {
+
   if (t == 20) {
     t = 0;
     e.move();
@@ -92,13 +112,20 @@ void draw() {
       pressed = false;
      // setup();
     }
+    q.addCurrent();
   }
-  setup();
+  makeStuff();
+   }
 }
+
 void keyReleased() {
   pressed = true;
  }
 
+void endGame() {
+  //needs to be implemented, random rectangle as placeholder
+  rect(86,99,400,97);
+}
 
 
 

@@ -171,10 +171,10 @@ public class functions {
       f.left = e.right;
       f.right = new box(625,400);
       f.right.parentL = f;
-      
-      //arbitrary int
+     
       return b;
     }
+    
 		
 
 
