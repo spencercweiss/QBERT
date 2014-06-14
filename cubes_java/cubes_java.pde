@@ -1,5 +1,6 @@
 PImage imgl;
 PImage imgr;
+PImage coily;
 int x = 335;
 int y = 80;
 boolean pressed = false;
@@ -74,13 +75,14 @@ for (box z : q.a) {
 
 imgl = loadImage("bertleft.png");
 imgr = loadImage("bertright.png");
+coily = loadImage("coily.png");
 if(q.faceRight){
 image(imgr,q.xLoc,q.yLoc);
 }else{
 image(imgl,q.xLoc,q.yLoc);
 }
 
-image(imgl,e.xLoc,e.yLoc);
+image(coily,e.xLoc,e.yLoc);
 }
 
 void draw() {
