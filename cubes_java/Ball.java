@@ -1,11 +1,11 @@
 import java.util.*;
 import java.io.*;
 
-public class Ball extends Enemy {
+public class Coily extends Enemy {
   
   public box top;
   
-  public Ball(box b, box t) {
+  public Coily(box b, box t) {
     super(b);
     top = t;
   }

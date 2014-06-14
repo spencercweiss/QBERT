@@ -8,7 +8,7 @@ public class Score {
   
   public Score(){}
   
-  public class updateScore(int n){
+  public void updateScore(int n){
     score += n;
     bonuslives += n;
     if (score < 15000 && bonuslives > 8000) {

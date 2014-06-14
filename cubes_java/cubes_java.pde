@@ -13,7 +13,7 @@ box c = top;
 QBERT q = new QBERT(top);
 box n = functions.newPyramid(top);
 Enemy e = new Enemy(n);
-Ball b1;
+Coily b1;
 Changer ch;
 ArrayList<Enemy> enemies = new ArrayList();
 
@@ -76,6 +76,8 @@ for (box z : q.a) {
 imgl = loadImage("bertleft.png");
 imgr = loadImage("bertright.png");
 coily = loadImage("coily.png");
+//changer
+//changer = loadImage("changer.png")
 if(q.faceRight){
 image(imgr,q.xLoc,q.yLoc);
 }else{
