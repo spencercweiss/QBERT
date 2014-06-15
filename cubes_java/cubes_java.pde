@@ -8,6 +8,7 @@ boolean pressed = false;
 int t = 20;
 int level = 1;
 Score score;
+score = 0;
 
 box top = new box(325,100);
 box c = top;
