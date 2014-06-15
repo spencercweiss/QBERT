@@ -68,8 +68,8 @@ rect(625,400,50,20);
 //QBERT facing directions based on where he's headed
 
 for (box z : q.a) {
-//  fill(101);
-  rect(z.xLoc-5,z.yLoc,60,25,22);
+  fill(#74CFE5);
+  rect(z.xLoc,z.yLoc,50,20);
 }
 
 
@@ -81,24 +81,22 @@ coily = loadImage("coily.png");
 ball = loadImage("ball.png");
 //changer
 //changer = loadImage("changer.png")
+
+image(coily,e.xLoc,e.yLoc);
+image(coily,e.xLoc,e.yLoc);
+
+if(q.getCurrent().getLit() == true){
+  fill(255);
+  rect(q.getCurrent().xLoc, q.getCurrent().yLoc,50,20);
+}
+
 if(q.faceRight){
 image(imgr,q.xLoc,q.yLoc);
 }else{
 image(imgl,q.xLoc,q.yLoc);
 }
 
-//<<<<<<< HEAD
-image(coily,e.xLoc,e.yLoc);
-//=======
-//<<<<<<< HEAD
-image(coily,e.xLoc,e.yLoc);
-/*
-if(q.getCurrent().getLit() == true){
-  fill(100);
-  rect(q.getCurrent().xLoc, q.getCurrent().yLoc,50,20);
-}
-*/
-//=======
+
 //image(coily,e.xLoc,e.yLoc);
 //image(ball,e.xLoc,e.yLoc);
 //>>>>>>> 1ff44cb6173190d0c0ace7cdfd76d6493de3f1dd
@@ -109,7 +107,6 @@ if (b1 != null)
   
 if (ch != null)
   image(imgr,ch.xLoc,ch.yLoc);
-//>>>>>>> e4edc8587cde3fe382ba4bdac3824b9d60217f10
 }
 
 
