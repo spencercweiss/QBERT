@@ -140,6 +140,7 @@ void draw() {
     if ((key == 'a' || key == 'A') && pressed == true){
       q.dLeft();
       pressed = false;
+      q.addCurrent(level);
       //setup();
     }
 
@@ -148,6 +149,7 @@ void draw() {
 
       q.dRight();
       pressed = false;
+      q.addCurrent(level);
     //  setup();
     }
 
@@ -156,6 +158,7 @@ void draw() {
 
       q.uLeft();
       pressed = false;
+      q.addCurrent(level);
      // setup();
     }
 
@@ -164,9 +167,9 @@ void draw() {
 
       q.uRight();
       pressed = false;
+      q.addCurrent(level);
      // setup();
     }
-    q.addCurrent(level);
   }
   makeStuff();
    }

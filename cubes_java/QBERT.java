@@ -14,8 +14,8 @@ public class QBERT extends character {
         public void addCurrent(int l) {
           for (int i = 0; i<a.size(); i++) {
              if (a.get(i) == current) {
-               if (l > 3)
-                 a.remove(i);
+               if (l > 3) {
+                 a.remove(i);}
                return;
              }
           }
