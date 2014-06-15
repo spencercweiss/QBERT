@@ -7,7 +7,7 @@ int y = 80;
 boolean pressed = false;
 int t = 20;
 int level = 1;
-int score = 0;
+Score score;
 
 box top = new box(325,100);
 box c = top;
