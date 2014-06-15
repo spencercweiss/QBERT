@@ -198,6 +198,6 @@ void winLevel() {
 
 void loseGame() {
   rect(0,0,200,100);
-  text(":(",10,100);
+  text(":(",100,200);
 }
 
