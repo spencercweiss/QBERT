@@ -87,12 +87,11 @@ image(imgr,q.xLoc,q.yLoc);
 image(imgl,q.xLoc,q.yLoc);
 }
 
-//image(coily,e.xLoc,e.yLoc);
-image(ball,e.xLoc,e.yLoc);
+image(coily,e.xLoc,e.yLoc);
 
 
 if (b1 != null)
-  image(imgr,b1.xLoc,b1.yLoc);
+  image(ball,b1.xLoc,b1.yLoc);
   
 if (ch != null)
   image(imgr,ch.xLoc,ch.yLoc);
