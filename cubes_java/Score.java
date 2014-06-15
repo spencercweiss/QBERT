@@ -17,7 +17,7 @@ public class Score {
     public void updateScore(int n, int sb){
 	newpoints = n;
 	if (sb > 0)
-		newpoints += (1000 + (sb-1 * 250));
+		newpoints += (1000 + ((sb-1) * 250));
 	score += newpoints;
 	bonuslives += newpoints;
 	if (score < 15000 && bonuslives > 8000) {
