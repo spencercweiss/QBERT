@@ -52,7 +52,7 @@ public class box {
 	}
         public void lit(){
                 lit = true;
-                updateScore(25,0);
+                score.updateScore(25,0);
         }
         public boolean getLit(){
 		return lit;
