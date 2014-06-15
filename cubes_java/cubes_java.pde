@@ -131,26 +131,26 @@ void draw() {
       pressed = false;
       //setup();
     }
-<<<<<<< HEAD
-=======
+
+
     if ((key == 's' || key == 'S') && pressed == true){
->>>>>>> a569a8b1b6553bfb97e12088dfa198bc96446e5f
+
       q.dRight();
       pressed = false;
     //  setup();
     }
-<<<<<<< HEAD
-=======
+
+
     if ((key == 'q' || key == 'Q') && pressed == true){
->>>>>>> a569a8b1b6553bfb97e12088dfa198bc96446e5f
+
       q.uLeft();
       pressed = false;
      // setup();
     }
-<<<<<<< HEAD
-=======
+
+
     if ((key == 'w' || key == 'W') && pressed == true){
->>>>>>> a569a8b1b6553bfb97e12088dfa198bc96446e5f
+
       q.uRight();
       pressed = false;
      // setup();
