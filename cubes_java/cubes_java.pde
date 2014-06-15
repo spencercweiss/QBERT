@@ -166,7 +166,7 @@ void draw() {
       pressed = false;
      // setup();
     }
-    q.addCurrent();
+    q.addCurrent(level);
   }
   makeStuff();
    }

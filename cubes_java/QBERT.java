@@ -11,10 +11,13 @@ public class QBERT extends character {
 		yLoc = 80;
 	}
 
-        public void addCurrent() {
+        public void addCurrent(int l) {
           for (int i = 0; i<a.size(); i++) {
-             if (a.get(i) == current)
+             if (a.get(i) == current) {
+               if (l > 3)
+                 a.remove(i);
                return;
+             }
           }
          a.add(current);
         }
