@@ -126,22 +126,22 @@ void draw() {
     t++;
   }
   if (keyPressed){
-    if (key == 'a' || key == 'A' && pressed == true){
+    if ((key == 'a' || key == 'A') && pressed == true){
       q.dLeft();
       pressed = false;
       //setup();
     }
-    if (key == 's' || key = 'S' && pressed == true){
+    if ((key == 's' || key == 'S') && pressed == true){
       q.dRight();
       pressed = false;
     //  setup();
     }
-    if (key == 'q' || key = 'Q' && pressed == true){
+    if ((key == 'q' || key == 'Q') && pressed == true){
       q.uLeft();
       pressed = false;
      // setup();
     }
-    if (key == 'w' || key = 'W' && pressed == true){
+    if ((key == 'w' || key == 'W') && pressed == true){
       q.uRight();
       pressed = false;
      // setup();
