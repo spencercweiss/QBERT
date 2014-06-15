@@ -7,6 +7,7 @@ int y = 80;
 boolean pressed = false;
 int t = 20;
 int level = 1;
+int score = 0;
 
 box top = new box(325,100);
 box c = top;
@@ -167,7 +168,7 @@ void keyReleased() {
 
 void winLevel() {
     if (level == 1) {
-    updateScore(25, 1);
+    score.updateScore(25, 1);
     enemies.remove(0);
     e.current = null;
     e = new Enemy(n);
@@ -177,7 +178,7 @@ void winLevel() {
     q = new QBERT(top);
     }
     else if (level >= 2) {
-      updateScore(25,2);
+      score.updateScore(25,2);
       q.current = null;
       q = new QBERT(top);
       enemies.remove(0);
