@@ -1,6 +1,7 @@
 PImage imgl;
 PImage imgr;
 PImage coily;
+PImage ball;
 int x = 335;
 int y = 80;
 boolean pressed = false;
@@ -76,19 +77,37 @@ for (box z : q.a) {
 imgl = loadImage("bertleft.png");
 imgr = loadImage("bertright.png");
 coily = loadImage("coily.png");
+//ball
+ball = loadImage("ball.png");
+//changer
+//changer = loadImage("changer.png")
 if(q.faceRight){
 image(imgr,q.xLoc,q.yLoc);
 }else{
 image(imgl,q.xLoc,q.yLoc);
 }
 
+<<<<<<< HEAD
 image(coily,e.xLoc,e.yLoc);
 
 if(q.getCurrent().getLit() == true){
   fill(100);
   rect(q.getCurrent().xLoc, q.getCurrent().yLoc,50,20);
 }
+=======
+//image(coily,e.xLoc,e.yLoc);
+image(ball,e.xLoc,e.yLoc);
+
+
+if (b1 != null)
+  image(imgr,b1.xLoc,b1.yLoc);
+  
+if (ch != null)
+  image(imgr,ch.xLoc,ch.yLoc);
+>>>>>>> e4edc8587cde3fe382ba4bdac3824b9d60217f10
 }
+
+
 
 void draw() {
   if (functions.checkEnemies(q,enemies) || q.a.size() >= 28)
@@ -137,7 +156,9 @@ void keyReleased() {
 void endGame() {
   //needs to be implemented, random rectangle as placeholder
   if (q.a.size() >= 28) {
+    enemies.remove(0);
     e = new Enemy(n);
+    enemies.add(e);
     b1 = new Ball(top.left.right, top);
     enemies.add(b1);
     q = new QBERT(top);
@@ -148,7 +169,7 @@ void endGame() {
     level++;
   }
   else {
-  rect(86,99,400,97);
+  rect(10,10,400,97);
 }
 
 }

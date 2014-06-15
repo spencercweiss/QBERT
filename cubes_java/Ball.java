@@ -15,6 +15,8 @@ public class Ball extends Enemy {
     int n = r.nextInt(2);
     if (current.right == null || current.left == null) {
       current = top;
+      xLoc = 335;
+      yLoc = 80;
     }
     else if (n == 0) {
       dRight();
