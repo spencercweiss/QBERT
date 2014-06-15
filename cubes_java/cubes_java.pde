@@ -167,7 +167,7 @@ void keyReleased() {
 
 void winLevel() {
     if (level == 1) {
-    updateScore(25, 1000);
+    updateScore(25, 1);
     enemies.remove(0);
     e.current = null;
     e = new Enemy(n);
@@ -177,7 +177,7 @@ void winLevel() {
     q = new QBERT(top);
     }
     else if (level >= 2) {
-      updateScore(25,1000);
+      updateScore(25,2);
       q.current = null;
       q = new QBERT(top);
       enemies.remove(0);
