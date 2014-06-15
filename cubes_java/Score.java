@@ -9,9 +9,9 @@ public class Score {
     public Score(){}
     
     public void updateScore(int n, int sb){
-	newpoints = 0;
-	newpoints += n;
-	newpoints += (1000 + (sb * 250));
+	newpoints = n;
+	if (sb > 0)
+		newpoints += (1000 + (sb * 250));
 	score += newpoints;
 	bonuslives += newpoints;
 	if (score < 15000 && bonuslives > 8000) {
