@@ -69,7 +69,7 @@ rect(625,400,50,20);
 
 for (box z : q.a) {
 //  fill(101);
-  rect(z.xLoc,z.yLoc,50,20,22);
+  rect(z.xLoc-5,z.yLoc,60,25,22);
 }
 
 
@@ -87,19 +87,20 @@ image(imgr,q.xLoc,q.yLoc);
 image(imgl,q.xLoc,q.yLoc);
 }
 
-<<<<<<< HEAD
+//<<<<<<< HEAD
 image(coily,e.xLoc,e.yLoc);
-=======
-<<<<<<< HEAD
+//=======
+//<<<<<<< HEAD
 image(coily,e.xLoc,e.yLoc);
-
+/*
 if(q.getCurrent().getLit() == true){
   fill(100);
   rect(q.getCurrent().xLoc, q.getCurrent().yLoc,50,20);
 }
+*/
 //=======
 //image(coily,e.xLoc,e.yLoc);
-image(ball,e.xLoc,e.yLoc);
+//image(ball,e.xLoc,e.yLoc);
 //>>>>>>> 1ff44cb6173190d0c0ace7cdfd76d6493de3f1dd
 
 
