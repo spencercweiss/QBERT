@@ -1,7 +1,6 @@
 public class Score {
 
     private int score; // current score
-    private int stagebonus;
     private int lives; // current life count
     private int bonuslives; // points allotted towards extra lives
 // you receive an extra life after 8000 points, then one for every 14000 points after that
@@ -9,10 +8,10 @@ public class Score {
     
     public Score(){}
     
-    public void updateScore(int n, int stagebonus){
+    public void updateScore(int n, int sb){
 	newpoints = 0;
 	newpoints += n;
-	newpoints += (1000 + (stagebonus * 250));
+	newpoints += (1000 + (sb * 250));
 	score += newpoints;
 	bonuslives += newpoints;
 	if (score < 15000 && bonuslives > 8000) {
