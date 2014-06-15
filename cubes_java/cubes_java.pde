@@ -83,6 +83,11 @@ image(imgl,q.xLoc,q.yLoc);
 }
 
 image(coily,e.xLoc,e.yLoc);
+
+if(q.getCurrent().getLit() == true){
+  fill(100);
+  rect(q.getCurrent().xLoc, q.getCurrent().yLoc,50,20);
+}
 }
 
 void draw() {

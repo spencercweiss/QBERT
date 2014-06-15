@@ -18,5 +18,47 @@ public class QBERT extends character {
           }
          a.add(current);
         }
+        
+  //Override super move methods to incorporate lighting the boxes
+
+  public void dRight() {
+    if (current.getRight() != null) {
+      current = current.getRight();
+      xLoc = xLoc + 50;
+      yLoc = yLoc + 50;
+    }
+    faceRight = true;
+    getCurrent().lit();  
+  }
+
+  public void dLeft() {
+    if (current.getLeft() != null) {
+      current = current.getLeft();
+      xLoc = xLoc - 50;
+      yLoc = yLoc + 50;
+    }
+    faceRight = false;
+    getCurrent().lit();
+  }
+
+  public void uRight() {
+    if (current.getParentR() != null) {
+      current = current.getParentR();
+      xLoc = xLoc + 50;
+      yLoc = yLoc - 50;
+    }
+    faceRight = true;
+    getCurrent().lit();
+  }
+
+  public void uLeft() {
+    if (current.getParentL() != null) {
+      current = current.getParentL();
+      xLoc = xLoc - 50;
+      yLoc = yLoc - 50;
+    }
+    faceRight = false;
+    getCurrent().lit();
+  }  
 
 }
