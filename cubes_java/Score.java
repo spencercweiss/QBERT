@@ -24,4 +24,8 @@ public class Score {
 	    bonuslives -= 14000;
 	}
     }
+    
+    public int getScore(){
+    	return score;
+    }
 }
