@@ -2,8 +2,6 @@ PImage imgl;
 PImage imgr;
 PImage coily;
 PImage ball;
-PImage evilR;
-PImage evilL;
 int x = 335;
 int y = 80;
 boolean pressed = false;
@@ -80,8 +78,6 @@ imgr = loadImage("bertright.png");
 coily = loadImage("coily.png");
 //ball
 ball = loadImage("ball.png");
-evilR = loadImage("evilbertright.png");
-evilL = loadImage("evilbertleft.png");
 //changer
 //changer = loadImage("changer.png")
 
@@ -109,10 +105,7 @@ if (b1 != null)
   image(ball,b1.xLoc,b1.yLoc);
   
 if (ch != null)
-  if (ch.faceRight) {
-    image(evilR,ch.xLoc,ch.yLoc); }
-  else{
-    image(evilL,ch.xLoc,ch.yLoc);}
+  image(imgr,ch.xLoc,ch.yLoc);
 }
 
 
@@ -133,22 +126,22 @@ void draw() {
     t++;
   }
   if (keyPressed){
-    if (key == 'a' && pressed == true){
+    if (key == 'a' || key == 'A' && pressed == true){
       q.dLeft();
       pressed = false;
       //setup();
     }
-    if (key == 's' && pressed == true){
+    if (key == 's' || key = 'S' && pressed == true){
       q.dRight();
       pressed = false;
     //  setup();
     }
-    if (key == 'q' && pressed == true){
+    if (key == 'q' || key = 'Q' && pressed == true){
       q.uLeft();
       pressed = false;
      // setup();
     }
-    if (key == 'w' && pressed == true){
+    if (key == 'w' || key = 'W' && pressed == true){
       q.uRight();
       pressed = false;
      // setup();
@@ -165,6 +158,7 @@ void keyReleased() {
 
 void winLevel() {
     if (level == 1) {
+    updateScore(25, 1000);
     enemies.remove(0);
     e.current = null;
     e = new Enemy(n);
@@ -174,6 +168,7 @@ void winLevel() {
     q = new QBERT(top);
     }
     else if (level >= 2) {
+      updateScore(25,1000);
       q.current = null;
       q = new QBERT(top);
       enemies.remove(0);
@@ -193,5 +188,6 @@ void winLevel() {
 
 void loseGame() {
   rect(0,0,200,100);
+  text(":(",10,100);
 }
 
