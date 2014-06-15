@@ -131,7 +131,7 @@ void draw() {
       pressed = false;
       //setup();
     }
-    if (key == 's' || key = 'S" && pressed == true){
+    if (key == 's' || key = 'S' && pressed == true){
       q.dRight();
       pressed = false;
     //  setup();
