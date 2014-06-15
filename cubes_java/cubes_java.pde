@@ -197,7 +197,8 @@ void winLevel() {
 }
 
 void loseGame() {
-  rect(0,0,200,100);
-  text(":(",10,400);
+  text(":(",10,20);
+  text("Your score was:",10,40); 
+  text((score.getScore()),105,40);
 }
 
