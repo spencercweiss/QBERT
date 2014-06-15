@@ -73,7 +73,6 @@ for (box z : q.a) {
 }
 
 
-
 imgl = loadImage("bertleft.png");
 imgr = loadImage("bertright.png");
 coily = loadImage("coily.png");
@@ -112,8 +111,10 @@ if (ch != null)
 
 
 void draw() {
-  if (functions.checkEnemies(q,enemies) || q.a.size() >= 28)
-    endGame();
+  if (functions.checkEnemies(q,enemies))
+    loseGame();
+   else if (q.a.size() >= 28)
+     winLevel();
    else {
 
   if (t == 20) {
@@ -155,24 +156,35 @@ void keyReleased() {
   pressed = true;
  }
 
-void endGame() {
-  //needs to be implemented, random rectangle as placeholder
-  if (q.a.size() >= 28) {
+void winLevel() {
+    if (level == 1) {
     enemies.remove(0);
+    e.current = null;
     e = new Enemy(n);
     enemies.add(e);
     b1 = new Ball(top.left.right, top);
     enemies.add(b1);
     q = new QBERT(top);
-    if (level >= 2) {
+    }
+    else if (level >= 2) {
+      q.current = null;
+      q = new QBERT(top);
+      enemies.remove(0);
+      e.current = null;
+      e = new Enemy(n);
+      enemies.add(e);
+      enemies.remove(0);
+      b1.current = null;
+      b1 = new Ball(top.left.right, top);
+      enemies.add(b1);
       ch = new Changer(top.right.right.left, q);
       enemies.add(ch);
     }
     level++;
-  }
-  else {
-  rect(10,10,400,97);
+
 }
 
+void loseGame() {
+  rect(0,0,200,100);
 }
 
