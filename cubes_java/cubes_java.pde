@@ -73,7 +73,6 @@ for (box z : q.a) {
 }
 
 
-
 imgl = loadImage("bertleft.png");
 imgr = loadImage("bertright.png");
 coily = loadImage("coily.png");
@@ -158,6 +157,7 @@ void keyReleased() {
  }
 
 void winLevel() {
+    if (level == 1) {
     enemies.remove(0);
     e.current = null;
     e = new Enemy(n);
@@ -165,13 +165,20 @@ void winLevel() {
     b1 = new Ball(top.left.right, top);
     enemies.add(b1);
     q = new QBERT(top);
-    if (level >= 2) {
-      enemies.remove(1);
+    }
+    else if (level >= 2) {
+      enemies.remove(0);
+      e.current = null;
+      e = new Enemy(n);
+      enemies.add(e);
+      enemies.remove(0);
       b1.current = null;
       b1 = new Ball(top.left.right, top);
       enemies.add(b1);
       ch = new Changer(top.right.right.left, q);
       enemies.add(ch);
+      q.current = null;
+      q = new QBERT(top);
     }
     level++;
 
