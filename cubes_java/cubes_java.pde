@@ -2,6 +2,8 @@ PImage imgl;
 PImage imgr;
 PImage coily;
 PImage ball;
+PImage evilR;
+PImage evilL;
 int x = 335;
 int y = 80;
 boolean pressed = false;
@@ -78,6 +80,8 @@ imgr = loadImage("bertright.png");
 coily = loadImage("coily.png");
 //ball
 ball = loadImage("ball.png");
+evilR = loadImage("evilbertright.png");
+evilL = loadImage("evilbertleft.png");
 //changer
 //changer = loadImage("changer.png")
 
@@ -105,7 +109,10 @@ if (b1 != null)
   image(ball,b1.xLoc,b1.yLoc);
   
 if (ch != null)
-  image(imgr,ch.xLoc,ch.yLoc);
+  if (ch.faceRight) {
+    image(evilR,ch.xLoc,ch.yLoc); }
+  else{
+    image(evilL,ch.xLoc,ch.yLoc);}
 }
 
 
