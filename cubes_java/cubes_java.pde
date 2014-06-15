@@ -29,6 +29,8 @@ void makeStuff() {
 size(700, 700);
 background(0);
 
+text(score.getScore() + q.a.size() * 25, 10,20);
+
 //fill here
 //.setFill() in box class
 rect(325,100,50,20);
@@ -168,7 +170,7 @@ void keyReleased() {
 
 void winLevel() {
     if (level == 1) {
-    score.updateScore(25, 1);
+    score.updateScore(q.a.size() * 25, 1);
     enemies.remove(0);
     e.current = null;
     e = new Enemy(n);
@@ -178,7 +180,7 @@ void winLevel() {
     q = new QBERT(top);
     }
     else if (level >= 2) {
-      score.updateScore(25,2);
+      score.updateScore(q.a.size() * 25,2);
       q.current = null;
       q = new QBERT(top);
       enemies.remove(0);
@@ -197,8 +199,8 @@ void winLevel() {
 }
 
 void loseGame() {
-  text(":(",10,20);
-  text("Your score was:",10,40); 
-  text((score.getScore()),105,40);
+  text("Game Over!",10,40);
+  text("Your score was:",10,60); 
+  text((score.getScore() + (q.a.size() * 25)),105,60);
 }
 

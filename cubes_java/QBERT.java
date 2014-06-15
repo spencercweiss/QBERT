@@ -6,7 +6,7 @@ public class QBERT extends character {
         public ArrayList<box> a = new ArrayList();
 
 	public QBERT(box b) {
-		super(b);
+                super(b);
 		xLoc = 335;
 		yLoc = 80;
 	}
@@ -26,6 +26,7 @@ public class QBERT extends character {
       current = current.getRight();
       xLoc = xLoc + 50;
       yLoc = yLoc + 50;
+      
     }
     faceRight = true;
     getCurrent().lit();  
