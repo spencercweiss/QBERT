@@ -167,6 +167,8 @@ void winLevel() {
     q = new QBERT(top);
     }
     else if (level >= 2) {
+      q.current = null;
+      q = new QBERT(top);
       enemies.remove(0);
       e.current = null;
       e = new Enemy(n);
@@ -177,8 +179,6 @@ void winLevel() {
       enemies.add(b1);
       ch = new Changer(top.right.right.left, q);
       enemies.add(ch);
-      q.current = null;
-      q = new QBERT(top);
     }
     level++;
 
