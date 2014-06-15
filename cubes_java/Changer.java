@@ -42,7 +42,7 @@ public class Changer extends Enemy {
   
   public boolean check(QBERT q) {
     if (super.check(q)) {
-      xLoc = 800
+      xLoc = 800;
       yLoc = 800;
       alive = false;
       t = 0;
