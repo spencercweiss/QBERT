@@ -52,7 +52,6 @@ public class box {
 	}
         public void lit(){
                 lit = true;
-                score.updateScore(25,0);
         }
         public boolean getLit(){
 		return lit;
