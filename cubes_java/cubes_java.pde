@@ -7,8 +7,7 @@ int y = 80;
 boolean pressed = false;
 int t = 20;
 int level = 1;
-Score score;
-score = 0;
+Score score = new Score(0, 3, 0, 0);
 
 box top = new box(325,100);
 box c = top;
@@ -199,6 +198,6 @@ void winLevel() {
 
 void loseGame() {
   rect(0,0,200,100);
-  text(":(",100,200);
+  text(":(",10,100);
 }
 

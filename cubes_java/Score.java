@@ -6,7 +6,13 @@ public class Score {
 // you receive an extra life after 8000 points, then one for every 14000 points after that
     private int newpoints;
     
-    public Score(){}
+    public Score(int s, int l, int b, int p){
+      score = s;
+      lives = l;
+      bonuslives = b;
+      newpoints = p;
+    }
+    
     
     public void updateScore(int n, int sb){
 	newpoints = n;
