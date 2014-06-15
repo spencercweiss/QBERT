@@ -28,7 +28,7 @@ public class Changer extends Enemy {
     } 
     }
     else {
-     if (t == 100) {
+     if (t == 10) {
        alive = true;
        current = placeHolder;
        xLoc = current.xLoc+10;

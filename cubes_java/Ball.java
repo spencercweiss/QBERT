@@ -11,6 +11,7 @@ public class Ball extends Enemy {
   }
   
   public void move() {
+    if (current != null) {
     Random r = new Random();
     int n = r.nextInt(2);
     if (current.right == null || current.left == null) {
@@ -24,7 +25,7 @@ public class Ball extends Enemy {
     else {
       dLeft();
     }
-  }
+  }}
   
   
   
