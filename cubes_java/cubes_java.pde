@@ -87,7 +87,20 @@ image(imgr,q.xLoc,q.yLoc);
 image(imgl,q.xLoc,q.yLoc);
 }
 
+<<<<<<< HEAD
 image(coily,e.xLoc,e.yLoc);
+=======
+<<<<<<< HEAD
+image(coily,e.xLoc,e.yLoc);
+
+if(q.getCurrent().getLit() == true){
+  fill(100);
+  rect(q.getCurrent().xLoc, q.getCurrent().yLoc,50,20);
+}
+//=======
+//image(coily,e.xLoc,e.yLoc);
+image(ball,e.xLoc,e.yLoc);
+//>>>>>>> 1ff44cb6173190d0c0ace7cdfd76d6493de3f1dd
 
 
 if (b1 != null)
@@ -95,6 +108,7 @@ if (b1 != null)
   
 if (ch != null)
   image(imgr,ch.xLoc,ch.yLoc);
+//>>>>>>> e4edc8587cde3fe382ba4bdac3824b9d60217f10
 }
 
 

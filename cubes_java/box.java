@@ -9,6 +9,7 @@ public class box {
 
 	public int xLoc, yLoc;
 
+        public boolean lit = false;
 
 	public box(int x, int y) {
 		xLoc = x;
@@ -49,8 +50,12 @@ public class box {
 	public box getParentR() {
 		return parentR;
 	}
-
-
+        public void lit(){
+                lit = true;
+        }
+        public boolean getLit(){
+        return lit;
+        }
 
 
 
