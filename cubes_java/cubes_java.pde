@@ -181,7 +181,10 @@ void draw() {
   else {
   makeStuff();
   //rect(200,290,300,120);
-  text("Player One: Press 's' to Start",260,350);
+  text("Player One: Press 's' to Start",260,450);
+  text("Intructions:",310,200);
+  text("Clear all of the Blocks",280,225);
+  text("Use the q, w, a, and s keys to navigate",230, 250);
   if ((key == 's' || key == 'S') && pressed == true){
     level++;
     pressed = false;
