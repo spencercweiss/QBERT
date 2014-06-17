@@ -8,7 +8,7 @@ int x = 335;
 int y = 80;
 boolean pressed = false;
 int t = 20;
-int level = 1;
+int level = 0;
 Score score = new Score(0, 3, 0, 0);
 
 box top = new box(325,100);
@@ -30,6 +30,7 @@ void makeStuff() {
    //enemies.add(e);
 size(700, 700);
 background(0);
+if (level > 0) {
 
 text(score.getScore() + q.a.size() * 25, 10,20);
 
@@ -118,10 +119,12 @@ if (ch != null)
   else {
     image(evilL,ch.xLoc,ch.yLoc);}
 }
+}
 
 
 
 void draw() {
+  if (level > 0) {
   if (functions.checkEnemies(q,enemies))
     loseGame();
    else if (q.a.size() >= 28)
@@ -171,8 +174,20 @@ void draw() {
      // setup();
     }
   }
+   
   makeStuff();
    }
+  }
+  else {
+  makeStuff();
+  //rect(200,290,300,120);
+  text("Player One: Press 's' to Start",260,350);
+  if ((key == 's' || key == 'S') && pressed == true){
+    level++;
+    pressed = false;
+  }
+  
+  }
 }
 
 void keyReleased() {
