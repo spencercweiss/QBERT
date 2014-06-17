@@ -8,7 +8,7 @@ int x = 335;
 int y = 80;
 boolean pressed = false;
 int t = 20;
-int level = 1;
+int level = 0;
 Score score = new Score(0, 3, 0, 0);
 
 box top = new box(325,100);
@@ -17,8 +17,9 @@ box c = top;
 QBERT q = new QBERT(top);
 box n = functions.newPyramid(top);
 Enemy e = new Enemy(n);
-Ball b1;
-Changer ch;
+Enemy e2, e3;
+Ball b1,b2;
+Changer ch, ch2;
 ArrayList<Enemy> enemies = new ArrayList();
 
 void setup(){
@@ -30,6 +31,7 @@ void makeStuff() {
    //enemies.add(e);
 size(700, 700);
 background(0);
+if (level > 0) {
 
 text(score.getScore() + q.a.size() * 25, 10,20);
 
@@ -90,7 +92,11 @@ evilR = loadImage("evilbertright.png");
 evilL = loadImage("evilbertleft.png");
 
 image(coily,e.xLoc,e.yLoc);
-image(coily,e.xLoc,e.yLoc);
+
+if (e2 != null)
+  image(coily,e2.xLoc,e2.yLoc);
+if (e3 != null)
+  image(coily,e3.xLoc,e3.yLoc);
 
 if(q.getCurrent().getLit() == true){
   fill(255);
@@ -112,16 +118,34 @@ image(imgl,q.xLoc,q.yLoc);
 if (b1 != null)
   image(ball,b1.xLoc,b1.yLoc);
   
-if (ch != null)
+if (b2 != null)
+  image(ball,b2.xLoc,b2.yLoc);
+  
+if (ch != null) {
   if (ch.faceRight) {
   image(evilR,ch.xLoc,ch.yLoc);}
   else {
     image(evilL,ch.xLoc,ch.yLoc);}
 }
 
+if (ch2 != null) {
+  if (ch2.faceRight) {
+  image(evilR,ch2.xLoc,ch2.yLoc);}
+  else {
+    image(evilL,ch2.xLoc,ch2.yLoc);}
+}
+
+
+}
+}
+
+
+
+
 
 
 void draw() {
+  if (level > 0) {
   if (functions.checkEnemies(q,enemies))
     loseGame();
    else if (q.a.size() >= 28)
@@ -171,8 +195,23 @@ void draw() {
      // setup();
     }
   }
+   
   makeStuff();
    }
+  }
+  else {
+  makeStuff();
+  //rect(200,290,300,120);
+  text("Player One: Press 's' to Start",260,450);
+  text("Intructions:",310,200);
+  text("Clear all of the Blocks",280,225);
+  text("Use the q, w, a, and s keys to navigate",230, 250);
+  if ((key == 's' || key == 'S') && pressed == true){
+    level++;
+    pressed = false;
+  }
+  
+  }
 }
 
 void keyReleased() {
@@ -190,6 +229,11 @@ void winLevel() {
     enemies.add(b1);
     q = new QBERT(top);
     }
+    else if (level >= 5) {
+    text("You Win!",10,40);
+    text("Your score is:",10,60); 
+    text((score.getScore() + (q.a.size() * 25)),105,60);
+    }
     else if (level >= 2) {
       score.updateScore(q.a.size() * 25,2);
       q.current = null;
@@ -204,6 +248,17 @@ void winLevel() {
       enemies.add(b1);
       ch = new Changer(top.right.right.left, q);
       enemies.add(ch);
+      if (level == 4) {
+        ch2 = new Changer(top.left.left.right, q);
+        b2 = new Ball(top.right.right, top);
+        e3 = new Enemy(top.left.left);
+        e2 = new Enemy(top.right.right.right.right.left);
+        enemies.add(ch2);
+        enemies.add(b2);
+        enemies.add(e2);
+        enemies.add(e3);
+      }
+        
     }
     level++;
 
