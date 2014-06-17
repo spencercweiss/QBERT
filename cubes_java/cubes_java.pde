@@ -229,6 +229,11 @@ void winLevel() {
     enemies.add(b1);
     q = new QBERT(top);
     }
+    else if (level >= 5) {
+    text("You Win!",10,40);
+    text("Your score is:",10,60); 
+    text((score.getScore() + (q.a.size() * 25)),105,60);
+    }
     else if (level >= 2) {
       score.updateScore(q.a.size() * 25,2);
       q.current = null;
