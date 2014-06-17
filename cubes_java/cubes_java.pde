@@ -17,8 +17,9 @@ box c = top;
 QBERT q = new QBERT(top);
 box n = functions.newPyramid(top);
 Enemy e = new Enemy(n);
-Ball b1;
-Changer ch;
+Enemy e2, e3;
+Ball b1,b2;
+Changer ch, ch2;
 ArrayList<Enemy> enemies = new ArrayList();
 
 void setup(){
@@ -91,7 +92,11 @@ evilR = loadImage("evilbertright.png");
 evilL = loadImage("evilbertleft.png");
 
 image(coily,e.xLoc,e.yLoc);
-image(coily,e.xLoc,e.yLoc);
+
+if (e2 != null)
+  image(coily,e2.xLoc,e2.yLoc);
+if (e3 != null)
+  image(coily,e3.xLoc,e3.yLoc);
 
 if(q.getCurrent().getLit() == true){
   fill(255);
@@ -113,13 +118,29 @@ image(imgl,q.xLoc,q.yLoc);
 if (b1 != null)
   image(ball,b1.xLoc,b1.yLoc);
   
-if (ch != null)
+if (b2 != null)
+  image(ball,b2.xLoc,b2.yLoc);
+  
+if (ch != null) {
   if (ch.faceRight) {
   image(evilR,ch.xLoc,ch.yLoc);}
   else {
     image(evilL,ch.xLoc,ch.yLoc);}
 }
+
+if (ch2 != null) {
+  if (ch2.faceRight) {
+  image(evilR,ch2.xLoc,ch2.yLoc);}
+  else {
+    image(evilL,ch2.xLoc,ch2.yLoc);}
 }
+
+
+}
+}
+
+
+
 
 
 
@@ -222,6 +243,17 @@ void winLevel() {
       enemies.add(b1);
       ch = new Changer(top.right.right.left, q);
       enemies.add(ch);
+      if (level == 4) {
+        ch2 = new Changer(top.left.left.right, q);
+        b2 = new Ball(top.right.right, top);
+        e3 = new Enemy(top.left.left);
+        e2 = new Enemy(top.right.right.right.right.left);
+        enemies.add(ch2);
+        enemies.add(b2);
+        enemies.add(e2);
+        enemies.add(e3);
+      }
+        
     }
     level++;
 
